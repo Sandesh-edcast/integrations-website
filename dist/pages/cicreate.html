@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <title>Edcast Integration</title>
+    <!-- Custom CSS -->
+    <link href="../assets/libs/flot/css/float-chart.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../assets/css/style.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin5">
+                    <!-- This is for the sidebar toggle which is visible on mobile only -->
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo icon -->
+                        <b class="logo-icon p-l-10">
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="../assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+                           
+                        </b>
+                        <!--End Logo icon -->
+                         <!-- Logo text -->
+                        
+                        <!-- Logo icon -->
+                        <!-- <b class="logo-icon"> -->
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <!-- <img src="../assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
+                            
+                        <!-- </b> -->
+                        <!--End Logo icon -->
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Toggle which is visible on mobile only -->
+                    <!-- ============================================================== -->
+                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-left mr-auto">
+                        <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
+                        
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-right">
+                        
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar" data-sidebarbg="skin5">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav" class="p-t-30">
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Getting Started</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="collaterals.html" aria-expanded="false"><i class="mdi mdi-matrix"></i><span class="hide-menu">Integration Collaterals</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="sso.html" aria-expanded="false"><i class="mdi mdi-lock-outline"></i><span class="hide-menu">SSO Integration</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="lrs.html" aria-expanded="false"><i class="mdi mdi-read"></i><span class="hide-menu">LRS with xAPI</span></a></li>
+                        
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Developer API (v5)</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="dauthentication.html" class="sidebar-link"><i class="mdi mdi-file-lock"></i><span class="hide-menu"> Authentication </span></a></li>
+                                <li class="sidebar-item"><a href="https://documenter.getpostman.com/view/1465156/RW8FERBE?version=latest#c7de3a2b-dfc5-4e55-9e00-b68d8d692ac8" class="sidebar-link" target="blank" ><i class="mdi mdi-account" ></i><span class="hide-menu"> Users </span></a></li>
+								<li class="sidebar-item"><a href="https://documenter.getpostman.com/view/1465156/RW8FERBE?version=latest#d8c63198-0191-4710-b5d2-0faeafc27394" target="blank"  class="sidebar-link"><i class="mdi mdi-file-document"></i><span class="hide-menu"> Content </span></a></li>
+								<li class="sidebar-item"><a href="https://www.getpostman.com/collections/1465156-321516de-a893-4740-b8d6-6f2307d85e00-RW8FERBEl" class="sidebar-link"><i class="mdi mdi-download"></i><span class="hide-menu"> Download Developer<br>API Postman Collection </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-code-braces"></i><span class="hide-menu">ECL Developer API </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="eauthentication.html" class="sidebar-link"><i class="mdi mdi-file-lock"></i><span class="hide-menu"> Authentication </span></a></li>
+                                <li class="sidebar-item"><a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-file-lock"></i><span class="hide-menu"> Collector </span></a>
+									 <ul aria-expanded="false" class="collapse  first-level p50">
+										<li class="sidebar-item"><a href="cshow.html" class="sidebar-link"><span class="hide-menu"> Show </span></a></li>
+										<li class="sidebar-item"><a href="csearch.html" class="sidebar-link"><span class="hide-menu"> Search </span></a></li>
+										<li class="sidebar-item"><a href="ctrigger.html" class="sidebar-link"><span class="hide-menu"> Trigger Collector </span></a></li>
+									</ul>	
+								</li>
+								<li class="sidebar-item"><a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-inbox"></i><span class="hide-menu"> Integration </span></a>
+									 <ul aria-expanded="false" class="collapse  first-level p50">
+										<li class="sidebar-item"><a href="ifind.html" class="sidebar-link"><span class="hide-menu"> Find by Name or ID </span></a></li>
+										<li class="sidebar-item"><a href="icreate.html" class="sidebar-link"><span class="hide-menu"> Create </span></a></li>
+										<li class="sidebar-item"><a href="ishow.html" class="sidebar-link"><span class="hide-menu"> Show </span></a></li>
+										<li class="sidebar-item"><a href="iupdate.html" class="sidebar-link"><span class="hide-menu"> Update </span></a></li>
+										<li class="sidebar-item"><a href="itrigger.html" class="sidebar-link"><span class="hide-menu"> Trigger Collector </span></a></li>
+									</ul>	
+								</li>
+								<li class="sidebar-item"><a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-file-document"></i><span class="hide-menu"> Content Item </span></a>
+									 <ul aria-expanded="false" class="collapse  first-level p50">
+										<li class="sidebar-item"><a href="cisearch.html" class="sidebar-link"><span class="hide-menu"> Search </span></a></li>
+										<li class="sidebar-item"><a href="cishow.html" class="sidebar-link"><span class="hide-menu"> Show </span></a></li>
+										<li class="sidebar-item"><a href="cicreate.html" class="sidebar-link"><span class="hide-menu"> Create </span></a></li>
+									</ul>	
+								</li>
+								<li class="sidebar-item"><a href="https://www.getpostman.com/collections/83b590a94d154a5d04d2" class="sidebar-link"><i class="mdi mdi-download"></i><span class="hide-menu"> Download ECL Developer<br>API Postman Collection </span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+             <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+                        <h4 class="page-title">Get Started</h4>
+                        
+                    </div>
+                </div>
+            </div>
+			<!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Sales Cards  -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-md-12">
+                        <div class="widget-box">
+						  <div class="widget-title">
+							<h5>Create Content Item</h5>
+						  </div>
+						  <div class="widget-content nopadding">
+
+
+<p><em>Creates and Returns json of newly created ContentItem.</em></p>
+
+<ul>
+<li><strong>URL</strong></li>
+</ul>
+
+<p><code>/api/developer/v1/content_items</code></p>
+
+<ul>
+<li><strong>Method:</strong></li>
+</ul>
+
+<p><em>POST</em></p>
+
+<ul>
+<li> <strong>URL Params</strong></li>
+</ul>
+
+<p><code>None</code></p>
+
+<ul>
+<li><strong>Data Params</strong></li>
+</ul>
+
+<p><strong>Required:</strong></p>
+
+<p><code>name=[String]</code></p>
+
+<p><code>source_id=[String]</code></p>
+
+<p><strong>Example Data</strong></p>
+
+<pre><code>  {
+  "content_type": "video",
+  "description": "Do you think it's a good idea to ...",
+  "external_id": "https://talkpython.fm/episodes/...testing.mp3",
+  "name": "#63 Validating Python tests with mutation testing",
+  "resource_metadata": {
+    "buzz_score": "0.64448",
+    "description": "Do you think it's a good idea to ...",
+     "images": [{"url": "https://....jpg"}],
+     "title": "#63 Validating Python tests with mutation testing",
+     "url": "https://www.audiosear.ch/media/...testing.mp3"
+     },
+  "source_id": "3910b116-4c14-43d3-b55b-96a67fa21c43",
+  "url": "https://www.audiosear.ch/media/...testing.mp3",
+  "content_languages_attributes": [{
+        "title": "en title",
+        "description": "en description",
+        "url": "https://journal.thriveglobal.com/how-psychologists-treat-the-kind-of-thinking-that-leads-to-depression-a690a0cebade2",
+        "language_code": "en"
+    },
+    {
+        "title": "fr title",
+        "description": "fr description",
+        "url": "https://journal.thriveglobal.com/how-psychologists-treat-the-kind-of-thinking-that-leads-to-depression-a690a0cebade2",
+        "language_code": "fr"
+    }],
+  "additional_metadata': {
+     "buzz_score": "0.64448",
+     "date_added": "2016-06-17T10:37:27.974Z",
+     "duration": 3576,
+     "identifier": "https://talkpython.fm/episodes/...testing.mp3",
+     "itunes_show_id": 979020229,
+     "rss_url": "https://talkpython.fm/episodes/rss",
+     "show_id": 6282
+     }
+  }
+</code></pre>
+
+<p><strong>Optional:</strong></p>
+
+<p><code>description=[String]</code></p>
+
+<p><code>content=[String]</code></p>
+
+<p><code>summary=[String]</code></p>
+
+<p><code>url=[String]</code></p>
+
+<p><code>author=[String]</code></p>
+
+<p><code>user_id=[Integer]</code></p>
+
+<p><code>external_id=[Array]</code></p>
+
+<p><code>content_type=[String]</code></p>
+
+<p><code>resource_metadata=[Hash]</code></p>
+
+<ul>
+<li><p>url=[String]</p></li>
+<li><p>title=[String]</p></li>
+<li><p>description=[String]</p></li>
+<li><p>embed_html=[String]</p></li>
+<li><p>video_url=[String]</p></li>
+<li><p>images=[Array]</p></li>
+<li><p>url=[String]</p></li>
+</ul>
+
+<p><code>additional_metadata=[Hash]</code></p>
+
+<p><code>duration_metadata=[Hash]</code></p>
+
+<p><code>raw_record=[Hash]</code></p>
+
+<p><code>taxonomies=[Array]</code></p>
+
+<p><code>content_languages_attributes=[Array of object]</code>
+  * url=[String]</p>
+
+<ul>
+<li><p>title=[String]</p></li>
+<li><p>description=[String]</p></li>
+<li><p>language_code</p></li>
+</ul>
+
+<p><strong>Supported Languages</strong></p>
+
+<table><thead>
+<tr>
+<th>Langage</th>
+<th>Code</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Arabic</td>
+<td>ar</td>
+</tr>
+<tr>
+<td>Czech</td>
+<td>cs</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>da</td>
+</tr>
+<tr>
+<td>German</td>
+<td>de</td>
+</tr>
+<tr>
+<td>Greek</td>
+<td>el</td>
+</tr>
+<tr>
+<td>English</td>
+<td>en</td>
+</tr>
+<tr>
+<td>Finnish</td>
+<td>fi</td>
+</tr>
+<tr>
+<td>French</td>
+<td>fr</td>
+</tr>
+<tr>
+<td>French(Cannada)</td>
+<td>fr-CA</td>
+</tr>
+<tr>
+<td>Gujarati</td>
+<td>gu</td>
+</tr>
+<tr>
+<td>Hebrew</td>
+<td>he</td>
+</tr>
+<tr>
+<td>Hindi</td>
+<td>hi</td>
+</tr>
+<tr>
+<td>Hungarian</td>
+<td>hu</td>
+</tr>
+<tr>
+<td>Indonesian</td>
+<td>id</td>
+</tr>
+<tr>
+<td>Italian</td>
+<td>it</td>
+</tr>
+<tr>
+<td>Japanese</td>
+<td>ja</td>
+</tr>
+<tr>
+<td>Korean</td>
+<td>ko</td>
+</tr>
+<tr>
+<td>Lithuanian</td>
+<td>lt</td>
+</tr>
+<tr>
+<td>Marathi</td>
+<td>mr</td>
+</tr>
+<tr>
+<td>Malay</td>
+<td>ms</td>
+</tr>
+<tr>
+<td>Dutch</td>
+<td>nl</td>
+</tr>
+<tr>
+<td>Polish</td>
+<td>pl</td>
+</tr>
+<tr>
+<td>Portuguese</td>
+<td>pt</td>
+</tr>
+<tr>
+<td>Portuguese(Brazil)</td>
+<td>pt-BR</td>
+</tr>
+<tr>
+<td>Romanian</td>
+<td>ro</td>
+</tr>
+<tr>
+<td>Russian</td>
+<td>ru</td>
+</tr>
+<tr>
+<td>Slovak</td>
+<td>sk</td>
+</tr>
+<tr>
+<td>Spanish</td>
+<td>es</td>
+</tr>
+<tr>
+<td>Serbian</td>
+<td>sr</td>
+</tr>
+<tr>
+<td>Swedish</td>
+<td>sv</td>
+</tr>
+<tr>
+<td>Tamil</td>
+<td>ta</td>
+</tr>
+<tr>
+<td>Telugu</td>
+<td>te</td>
+</tr>
+<tr>
+<td>Thai</td>
+<td>th</td>
+</tr>
+<tr>
+<td>Turkish</td>
+<td>tr</td>
+</tr>
+<tr>
+<td>Ukrainian</td>
+<td>uk</td>
+</tr>
+<tr>
+<td>Urdu</td>
+<td>ur</td>
+</tr>
+<tr>
+<td>Vietnamese</td>
+<td>vi</td>
+</tr>
+<tr>
+<td>Chinese</td>
+<td>zh</td>
+</tr>
+<tr>
+<td>Chinese(Traditional)</td>
+<td>zh-Hant</td>
+</tr>
+</tbody></table>
+
+<ul>
+<li><p><strong>Success Response:</strong></p>
+
+<ul>
+<li><strong>Code:</strong> 200</li>
+<li><strong>Content:</strong></li>
+</ul></li>
+</ul>
+
+<pre><code>     {
+    "data": {
+      "id": "7c2c4e39-3c26-43bd-9e67-2a37f2a9fe35",
+      "name": "Graphic Design Festival Paris",
+      "description": "Seems likes you have an Ad blocker in your navigator :(.",
+      "summary": "Seems likes you have an Ad blocker in your navigator :(.",
+      "url": "https://uigarage.net/graphic-design-festival-paris/",
+      "external_id": "https://uigarage.net/?p=10040",
+      "tags": [
+          {
+              "tag": "All",
+              "source": "native",
+              "tag_type": "keyword"
+          },
+          {
+              "tag": "ux",
+              "source": "native",
+              "tag_type": "keyword"
+          }
+      ],
+      "author": "Lisa Nettler",
+      "source_id": "76e912c1-5c7f-44cb-9d59-67e362b5e180",
+      "source_type_id": "efad11f1-a18f-4c1c-9f85-382a1382e4a6",
+      "source_type_name": "rss",
+      "content_type": "article",
+      "organization_id": null,
+      "duration_metadata": null,
+      "resource_metadata": {
+          "url": "https://uigarage.net/graphic-design-festival-paris/",
+          "title": "Daily UI Design Inspiration &amp; Patterns",
+          "description": "",
+          "images": [
+              {
+                  "url": "https://uigarage.net/wp-content/uploads/2017/02/Screen-Shot-2017-02-03-at-11.05.27-AM.png",
+                  "thumbnail_id": "2bd92702-7d09-44a7-a77b-7aa4435cf646",
+                  "original_url": "https://d3l67j0gfgxuc5.cloudfront.net/uploads/thumbnail/image/2bd92702-7d09-44a7-a77b-7aa4435cf646/Screen-Shot-2017-02-03-at-11.05.27-AM.png",
+                  "thumb_url": "https://d3l67j0gfgxuc5.cloudfront.net/uploads/thumbnail/image/2bd92702-7d09-44a7-a77b-7aa4435cf646/thumb_Screen-Shot-2017-02-03-at-11.05.27-AM.png",
+                  "medium_url": "https://d3l67j0gfgxuc5.cloudfront.net/uploads/thumbnail/image/2bd92702-7d09-44a7-a77b-7aa4435cf646/medium_Screen-Shot-2017-02-03-at-11.05.27-AM.png",
+                  "large_url": "https://d3l67j0gfgxuc5.cloudfront.net/uploads/thumbnail/image/2bd92702-7d09-44a7-a77b-7aa4435cf646/large_Screen-Shot-2017-02-03-at-11.05.27-AM.png"
+              }
+          ]
+      },
+      "additional_metadata": null,
+      "nlp_metadata": null,
+      "created_at": "2017-02-06T11:06:11.489Z",
+      "updated_at": "2017-02-08T18:29:27.296Z",
+      "user_id": null,
+      "source_display_name": "Daily UI Design Inspiration &amp; Patterns – UI Garage",
+      "taxonomies_list": [
+          null
+      ],
+      "taxonomies": [
+          {
+              "tax": "edcast.technology.user_experience.interaction_design",
+              "strength": 0.2864905297756195
+          },
+          {
+              "tax": "edcast.creative.cad.product_design",
+              "strength": 0.2712938189506531
+          }
+      ],
+    "content_languages": [
+    {
+        "content_item_id": "xxxx",
+        "title": "en title",
+        "description": "en description",
+        "url": "https://journal.thriveglobal.com/how-psychologists-treat-the-kind-of-thinking-that-leads-to-depression-a690a0cebade2",
+        "language_code": "en"
+    },
+    {
+        "content_item_id": "xxxx",
+        "title": "fr title",
+        "description": "fr description",
+        "url": "https://journal.thriveglobal.com/how-psychologists-treat-the-kind-of-thinking-that-leads-to-depression-a690a0cebade2",
+        "language_code": "fr"
+    }
+    ]      
+    }
+  }
+</code></pre>
+
+<ul>
+<li><p><strong>Error Response:</strong></p>
+
+<ul>
+<li><strong>Code:</strong> 401 UNAUTHORIZED</li>
+<li><strong>Content:</strong>
+<code>
+{
+  "error": "You are unauthorized to make this request."
+}
+</code></li>
+</ul></li>
+</ul>
+
+						  </div>
+						</div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+			<footer class="footer">
+				<div class="row">
+					<div class="col-sm-6">
+						 <div>© 2019 EdCast Inc.</div>
+					</div>
+					<div class="col-sm-6">
+						<div align="right">
+							<a href="https://www.facebook.com/EdCast"><img class="fimg" src="../assets/images/fb.png"></a>
+							<a href="https://twitter.com/edcast"><img class="fimg" src="../assets/images/tw.png"></a>	
+							<a href="https://www.linkedin.com/company/edcast"><img class="fimg" src="../assets/images/ln.png"></a>		
+						</div>
+					</div>
+				</div>
+				</footer>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="../assets/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="../assets/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../assets/js/custom.min.js"></script>
+
+</body>
+
+</html>

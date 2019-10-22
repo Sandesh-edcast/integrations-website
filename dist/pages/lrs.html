@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <title>Edcast Integration</title>
+    <!-- Custom CSS -->
+    <link href="../assets/libs/flot/css/float-chart.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../assets/css/style.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin5">
+                    <!-- This is for the sidebar toggle which is visible on mobile only -->
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo icon -->
+                        <b class="logo-icon p-l-10">
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="../assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+                           
+                        </b>
+                        <!--End Logo icon -->
+                         <!-- Logo text -->
+                        
+                        <!-- Logo icon -->
+                        <!-- <b class="logo-icon"> -->
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <!-- <img src="../assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
+                            
+                        <!-- </b> -->
+                        <!--End Logo icon -->
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Toggle which is visible on mobile only -->
+                    <!-- ============================================================== -->
+                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-left mr-auto">
+                        <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
+                        
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-right">
+                        
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar" data-sidebarbg="skin5">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav" class="p-t-30">
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Getting Started</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="collaterals.html" aria-expanded="false"><i class="mdi mdi-matrix"></i><span class="hide-menu">Integration Collaterals</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="sso.html" aria-expanded="false"><i class="mdi mdi-lock-outline"></i><span class="hide-menu">SSO Integration</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="lrs.html" aria-expanded="false"><i class="mdi mdi-read"></i><span class="hide-menu">LRS with xAPI</span></a></li>
+                        
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Developer API (v5)</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="dauthentication.html" class="sidebar-link"><i class="mdi mdi-file-lock"></i><span class="hide-menu"> Authentication </span></a></li>
+                                <li class="sidebar-item"><a href="https://documenter.getpostman.com/view/1465156/RW8FERBE?version=latest#c7de3a2b-dfc5-4e55-9e00-b68d8d692ac8" class="sidebar-link" target="blank" ><i class="mdi mdi-account" ></i><span class="hide-menu"> Users </span></a></li>
+								<li class="sidebar-item"><a href="https://documenter.getpostman.com/view/1465156/RW8FERBE?version=latest#d8c63198-0191-4710-b5d2-0faeafc27394" target="blank"  class="sidebar-link"><i class="mdi mdi-file-document"></i><span class="hide-menu"> Content </span></a></li>
+								<li class="sidebar-item"><a href="https://www.getpostman.com/collections/1465156-321516de-a893-4740-b8d6-6f2307d85e00-RW8FERBEl" class="sidebar-link"><i class="mdi mdi-download"></i><span class="hide-menu"> Download Developer<br>API Postman Collection </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-code-braces"></i><span class="hide-menu">ECL Developer API </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="eauthentication.html" class="sidebar-link"><i class="mdi mdi-file-lock"></i><span class="hide-menu"> Authentication </span></a></li>
+                                <li class="sidebar-item"><a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-file-lock"></i><span class="hide-menu"> Collector </span></a>
+									 <ul aria-expanded="false" class="collapse  first-level p50">
+										<li class="sidebar-item"><a href="cshow.html" class="sidebar-link"><span class="hide-menu"> Show </span></a></li>
+										<li class="sidebar-item"><a href="csearch.html" class="sidebar-link"><span class="hide-menu"> Search </span></a></li>
+										<li class="sidebar-item"><a href="ctrigger.html" class="sidebar-link"><span class="hide-menu"> Trigger Collector </span></a></li>
+									</ul>	
+								</li>
+								<li class="sidebar-item"><a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-inbox"></i><span class="hide-menu"> Integration </span></a>
+									 <ul aria-expanded="false" class="collapse  first-level p50">
+										<li class="sidebar-item"><a href="ifind.html" class="sidebar-link"><span class="hide-menu"> Find by Name or ID </span></a></li>
+										<li class="sidebar-item"><a href="icreate.html" class="sidebar-link"><span class="hide-menu"> Create </span></a></li>
+										<li class="sidebar-item"><a href="ishow.html" class="sidebar-link"><span class="hide-menu"> Show </span></a></li>
+										<li class="sidebar-item"><a href="iupdate.html" class="sidebar-link"><span class="hide-menu"> Update </span></a></li>
+										<li class="sidebar-item"><a href="itrigger.html" class="sidebar-link"><span class="hide-menu"> Trigger Collector </span></a></li>
+									</ul>	
+								</li>
+								<li class="sidebar-item"><a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-file-document"></i><span class="hide-menu"> Content Item </span></a>
+									 <ul aria-expanded="false" class="collapse  first-level p50">
+										<li class="sidebar-item"><a href="cisearch.html" class="sidebar-link"><span class="hide-menu"> Search </span></a></li>
+										<li class="sidebar-item"><a href="cishow.html" class="sidebar-link"><span class="hide-menu"> Show </span></a></li>
+										<li class="sidebar-item"><a href="cicreate.html" class="sidebar-link"><span class="hide-menu"> Create </span></a></li>
+									</ul>	
+								</li>
+								<li class="sidebar-item"><a href="https://www.getpostman.com/collections/83b590a94d154a5d04d2" class="sidebar-link"><i class="mdi mdi-download"></i><span class="hide-menu"> Download ECL Developer<br>API Postman Collection </span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+             <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+                        <h4 class="page-title">LRS with xAPI</h4>
+                        
+                    </div>
+                </div>
+            </div>
+			<!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Sales Cards  -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-md-12">
+                        <div class="widget-box">
+						  <div class="widget-title">
+							<h5>Experience API </h5>
+						  </div>
+						  <div class="widget-content nopadding">
+<h3 id="quick-start">Quick Start</h3>
+<p>Welcome to EdCast's LRS Framework. This document defines how to record learning activities using xAPIs.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>Developer needs Credentials provided by this EdCast admin and xAPI endpoint to accept triggers from partner's LMS to record activity on EdCast Learning Record Store(LRS).</p>
+<h3 id="credentials">Credentials</h3>
+<p>EdCast admin will provide <code>Authorization token</code> needed for the header of each call to the LRS using xAPI.</p>
+<h3 id="lrs-xapi-endpoint">LRS xAPI Endpoint</h3>
+<blockquote>
+<h4 id="api">API</h4>
+<pre><code class="hljs ruby"><span class="hljs-symbol">POST:</span> <span class="hljs-symbol">https:</span>/<span class="hljs-regexp">/lrs.edcast.com/data</span><span class="hljs-regexp">/xAPI/statements</span>
+</code></pre>
+<h4 id="headers">Headers</h4>
+<pre><code class="hljs http"><span class="hljs-attribute">Authorization</span>: [Authorization token]
+<span class="hljs-attribute">X-Experience-API-Version</span>: 1.0.3,
+<span class="hljs-attribute">Content-Type</span>: 'application/json',
+<span class="hljs-attribute">charset</span>: 'utf-8'
+</code></pre>
+<h4 id="body">Body</h4>
+<pre><code class="hljs json">{<span class="hljs-attr">"actor"</span>: {
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"test user12"</span>,
+ <span class="hljs-attr">"mbox"</span>: <span class="hljs-string">"mailto:test12@gmail.com"</span>
+  },
+  <span class="hljs-attr">"verb"</span>: {
+     <span class="hljs-attr">"id"</span>: <span class="hljs-string">"http://activitystrea.ms/schema/1.0/complete"</span>,
+      <span class="hljs-attr">"display"</span>: {
+         <span class="hljs-attr">"en-US"</span>: <span class="hljs-string">"completed"</span>
+      }
+  },
+  <span class="hljs-attr">"timestamp"</span>: <span class="hljs-string">"2017-03-10T03:41:22.788Z"</span>,
+  <span class="hljs-attr">"object"</span>: {
+     <span class="hljs-attr">"id"</span>: <span class="hljs-string">"https://www.ht2labs.com/blog/xapi-statement-verb/#.WgnXzkqCz"</span>,
+       <span class="hljs-attr">"definition"</span>: {
+            <span class="hljs-attr">"name"</span>: {
+                   <span class="hljs-attr">"en-US"</span>: <span class="hljs-string">"[Machine Learning]"</span>
+              },
+              <span class="hljs-attr">"description"</span>: {
+                   <span class="hljs-attr">"en-US"</span>: <span class="hljs-string">"Play with data and train your machine to predict results"</span>
+           },
+              <span class="hljs-attr">"type"</span>: <span class="hljs-string">"http://adlnet.gov/expapi/activities/course"</span>
+    },
+     <span class="hljs-attr">"objectType"</span>: <span class="hljs-string">"Activity"</span>
+ },
+<span class="hljs-attr">"result"</span>:{
+    <span class="hljs-attr">"score"</span>:{
+      <span class="hljs-attr">"scaled"</span>:<span class="hljs-number">0.95</span>
+    },
+    <span class="hljs-attr">"success"</span>:<span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"completion"</span>:<span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"duration"</span>: <span class="hljs-string">"PT1234S"</span>
+  }
+}
+</code></pre>
+<h3 id="attributes">Attributes</h3>
+<p></p><table class="table table-striped table-hover">
+  <tbody><tr>
+    <th>Property</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Required</th>
+  </tr>
+  <tr id="2.4.s1.table1.row2">
+    <td><a href="#actor">actor</a></td>
+    <td>Object</td>
+    <td>Whom the Statement is about, as an <a href="#agent">Agent</a> or 
+      <a href="#group">Group</a> Object.</td>
+    <td>Required</td>
+  </tr>
+  <tr id="2.4.s1.table1.row3">
+    <td><a href="#verb">verb</a></td>
+    <td>Object</td>
+    <td>Action taken by the Actor.</td>
+    <td>Required</td>
+  </tr>
+  <tr id="2.4.s1.table1.row4">
+    <td><a href="#object">object</a></td>
+    <td>Object</td>
+    <td>Activity, Agent, or another Statement that is the Object of the Statement. 
+    </td>
+    <td>Required</td>
+  </tr>
+  <tr id="2.4.s1.table1.row5">
+    <td><a href="#result">result</a></td>
+    <td>Object</td>
+    <td>Result Object, further details representing a measured outcome.</td>
+    <td>Optional</td>
+  </tr>
+  <tr id="2.4.s1.table1.row6">
+    <td><a href="#context">context</a></td>
+    <td>Object</td>
+    <td>Context that gives the Statement more meaning. Examples: a team the Actor is 
+  working with, altitude at which a scenario was attempted in a flight simulator.</td>
+    <td>Optional</td>
+  </tr>
+  <tr id="2.4.s1.table1.row7">
+    <td><a href="#timestamp">timestamp</a></td>
+    <td><a href="#timestamps">Timestamp</a></td>
+    <td>Timestamp of when the events described within this Statement occurred. Set by the LRS if not provided.</td>
+    <td>Optional</td>
+  </tr>
+</tbody></table><p></p>
+</blockquote>
+<hr>
+<blockquote>
+<h3 id="actor">Actor</h3>
+</blockquote>
+<p>The Actor defines who performed the action. The Actor of a Statement can be an Agent or a Group. </p>
+<pre><code class="hljs perl"><span class="hljs-string">"actor"</span>: {
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"test user12"</span>,
+  <span class="hljs-string">"mbox"</span>: <span class="hljs-string">"mailto:test12@gmail.com"</span>
+}
+</code></pre>
+<blockquote>
+<h3 id="verb">Verb</h3>
+</blockquote>
+<p>The Verb defines the action between an Actor and an Activity. </p>
+<pre><code class="hljs bash"><span class="hljs-string">"verb"</span>: {
+   <span class="hljs-string">"id"</span>: <span class="hljs-string">"http://activitystrea.ms/schema/1.0/complete"</span>,
+    <span class="hljs-string">"display"</span>: {
+       <span class="hljs-string">"en-US"</span>: <span class="hljs-string">"completed"</span>
+    }
+}
+</code></pre>
+<p>List of Verbs EdCast will use to process user’s learning profile</p>
+<table class="table table-striped table-hover">
+<thead>
+<tr>
+<th>Verb</th>
+<th>ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>created</td>
+<td>http://activitystrea.ms/schema/1.0/create</td>
+</tr>
+<tr>
+<td>assigned</td>
+<td>http://activitystrea.ms/schema/1.0/assign</td>
+</tr>
+<tr>
+<td>started</td>
+<td>http://activitystrea.ms/schema/1.0/start</td>
+</tr>
+<tr>
+<td>progressed</td>
+<td>http://adlnet.gov/expapi/verbs/progressed</td>
+</tr>
+<tr>
+<td>consumed</td>
+<td>http://activitystrea.ms/schema/1.0/consume</td>
+</tr>
+<tr>
+<td>completed</td>
+<td>http://adlnet.gov/expapi/verbs/completed</td>
+</tr>
+<tr>
+<td>passed</td>
+<td>http://adlnet.gov/expapi/verbs/passed</td>
+</tr>
+<tr>
+<td>failed</td>
+<td>http://adlnet.gov/expapi/verbs/failed</td>
+</tr>
+<tr>
+<td>up voted</td>
+<td>http://id.tincanapi.com/verb/voted-up</td>
+</tr>
+<tr>
+<td>commented</td>
+<td>http://adlnet.gov/expapi/verbs/commented</td>
+</tr>
+<tr>
+<td>viewed</td>
+<td>http://id.tincanapi.com/verb/viewed</td>
+</tr>
+<tr>
+<td>bookmarked</td>
+<td>http://id.tincanapi.com/verb/bookmarked</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<h3 id="object">Object</h3>
+</blockquote>
+<p>The Object defines the thing that was acted on. The Object of a Statement can be an Activity, Agent/Group, SubStatement, or Statement Reference.</p>
+<pre><code class="hljs bash"><span class="hljs-string">"object"</span>: {
+   <span class="hljs-string">"id"</span>: <span class="hljs-string">"https://www.ht2labs.com/blog/xapi-statement-verb/#.WgnXzkqCz[?key=value&amp;key=value]"</span>,
+     <span class="hljs-string">"definition"</span>: {
+          <span class="hljs-string">"name"</span>: {
+                 <span class="hljs-string">"en-US"</span>: <span class="hljs-string">"[Machine Learning]"</span>
+            },
+            <span class="hljs-string">"description"</span>: {
+                 <span class="hljs-string">"en-US"</span>: <span class="hljs-string">"Play with data and train your machine to predict results"</span>
+         },
+            <span class="hljs-string">"type"</span>: <span class="hljs-string">"http://adlnet.gov/expapi/activities/course"</span>
+  },
+   <span class="hljs-string">"objectType"</span>: <span class="hljs-string">"Activity"</span>
+}
+</code></pre>
+<p>For more example check this</p>
+<h4 id="id">ID</h4>
+<p>The Object Id contains the URL for the card along with query parameters.</p>
+<h5 id="query-parameters">Query parameters</h5>
+<table class="table table-striped table-hover">
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ecl_id</td>
+<td>This is optional param. It's a unique ID generated and added in the URL if available.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="type">TYPE</h4>
+<p>List of Types EdCast will use to process user’s learning profile</p>
+<table class="table table-striped table-hover">
+<thead>
+<tr>
+<th>Type</th>
+<th>ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>video</td>
+<td>http://activitystrea.ms/schema/1.0/video</td>
+</tr>
+<tr>
+<td>question</td>
+<td>http://activitystrea.ms/schema/1.0/question</td>
+</tr>
+<tr>
+<td>article</td>
+<td>http://activitystrea.ms/schema/1.0/article</td>
+</tr>
+<tr>
+<td>Course</td>
+<td>http://adlnet.gov/expapi/activities/course</td>
+</tr>
+<tr>
+<td>Objective</td>
+<td>http://adlnet.gov/expapi/activities/objective</td>
+</tr>
+<tr>
+<td>image</td>
+<td>http://activitystrea.ms/schema/1.0/image</td>
+</tr>
+<tr>
+<td>collection</td>
+<td>http://activitystrea.ms/schema/1.0/collection</td>
+</tr>
+<tr>
+<td>bookmark</td>
+<td>http://activitystrea.ms/schema/1.0/bookmark</td>
+</tr>
+<tr>
+<td>comment</td>
+<td>http://activitystrea.ms/schema/1.0/comment</td>
+</tr>
+<tr>
+<td>badge</td>
+<td>http://activitystrea.ms/schema/1.0/badge</td>
+</tr>
+<tr>
+<td>lesson</td>
+<td>http://adlnet.gov/expapi/activities/lesson</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> All verbs and types are case sensitive</p>
+<blockquote>
+<h3 id="result">Result</h3>
+</blockquote>
+<p>An optional property that represents a measured outcome related to the Statement in which it is included. Example:</p>
+<pre><code class="hljs bash"><span class="hljs-string">"result"</span>:{
+    <span class="hljs-string">"score"</span>:{
+      <span class="hljs-string">"scaled"</span>:0.95
+    },
+    <span class="hljs-string">"success"</span>:<span class="hljs-literal">true</span>,
+    <span class="hljs-string">"completion"</span>:<span class="hljs-literal">true</span>,
+    <span class="hljs-string">"duration"</span>: <span class="hljs-string">"PT1234S"</span>
+  }
+}
+</code></pre>
+<h4 id="duration-format">Duration Format</h4>
+<table class="table table-striped table-hover">
+<thead>
+<tr>
+<th>Example</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PT4H35M59.14S</td>
+<td>Four hours, thirty five minutes and 59.14 seconds.</td>
+</tr>
+<tr>
+<td>P16559.14S</td>
+<td>The same time period as above represented in seconds.</td>
+</tr>
+<tr>
+<td>P3Y1M29DT4H35M59.14S</td>
+<td>A Duration also including years, months and days.</td>
+</tr>
+<tr>
+<td>P3Y</td>
+<td>Approximately three years e.g. completion of a qualification.</td>
+</tr>
+<tr>
+<td>P4W</td>
+<td>Four weeks. Note that weeks cannot be combined with other time periods. 'P4W1D' is not valid.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<h3 id="context">Context</h3>
+</blockquote>
+<p>An optional property that provides a place to add contextual information to a Statement. All "context" properties are optional.</p>
+<pre><code class="hljs bash"><span class="hljs-string">"context"</span>: {
+   <span class="hljs-string">"registration"</span>: <span class="hljs-string">"957f56b7-1d34-4b01-9408-3ffeb2053b28"</span>,
+    <span class="hljs-string">"contextActivities"</span>:{
+    <span class="hljs-string">"category"</span>:[{        
+        <span class="hljs-string">"id"</span>:<span class="hljs-string">"http://adlnet.gov/expapi/activities/assessment"</span>,
+         <span class="hljs-string">"definition"</span>: {
+          <span class="hljs-string">"name"</span>: {
+               <span class="hljs-string">"en"</span>: <span class="hljs-string">"Assesment"</span>
+          },
+          <span class="hljs-string">"description"</span>: {
+              <span class="hljs-string">"en"</span>: <span class="hljs-string">"A category of course with Assesment."</span>
+          }
+        }
+      },
+      {
+        <span class="hljs-string">"id"</span>:<span class="hljs-string">"http://adlnet.gov/expapi/activities/objective"</span>
+      },
+      {
+        <span class="hljs-string">"id"</span>:<span class="hljs-string">"http://activitystrea.ms/schema/1.0/audio"</span>
+      },
+      {
+        <span class="hljs-string">"id"</span>:<span class="hljs-string">"http://activitystrea.ms/schema/1.0/video"</span>
+                } ]
+       },
+    <span class="hljs-string">"instructor"</span>: {
+        <span class="hljs-string">"name"</span>: <span class="hljs-string">"Andrew Downes"</span>,
+        <span class="hljs-string">"account"</span>: {
+             <span class="hljs-string">"homePage"</span>: <span class="hljs-string">"http://www.example.com"</span>,
+           <span class="hljs-string">"name"</span>: <span class="hljs-string">"Andrew Downes"</span>
+       }
+   }
+}
+</code></pre>
+<p>For more example check  this</p>
+<blockquote>
+<h3 id="timestamp">Timestamp</h3>
+</blockquote>
+<p>The time at which the experience occurred.</p>
+<pre><code class="hljs css">"<span class="hljs-selector-tag">timestamp</span>": "2017<span class="hljs-selector-tag">-11-10T12</span><span class="hljs-selector-pseudo">:17</span><span class="hljs-selector-pseudo">:00+00</span><span class="hljs-selector-pseudo">:00"</span>
+</code></pre>
+</code></pre></div>
+						  </div>
+						</div>
+                    </div>
+                    
+                </div>
+                <footer class="footer">
+				<div class="row">
+					<div class="col-sm-6">
+						 <div>© 2019 EdCast Inc.</div>
+					</div>
+					<div class="col-sm-6">
+						<div align="right">
+							<a href="https://www.facebook.com/EdCast"><img class="fimg" src="../assets/images/fb.png"></a>
+							<a href="https://twitter.com/edcast"><img class="fimg" src="../assets/images/tw.png"></a>	
+							<a href="https://www.linkedin.com/company/edcast"><img class="fimg" src="../assets/images/ln.png"></a>		
+						</div>
+					</div>
+				</div>
+				</footer>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="../assets/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="../assets/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../assets/js/custom.min.js"></script>
+
+</body>
+
+</html>
