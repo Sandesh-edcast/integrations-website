@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <title>Edcast Integration</title>
+    <!-- Custom CSS -->
+    <link href="../assets/libs/flot/css/float-chart.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../assets/css/style.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin5">
+                    <!-- This is for the sidebar toggle which is visible on mobile only -->
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo icon -->
+                        <b class="logo-icon p-l-10">
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="../assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+                           
+                        </b>
+                        <!--End Logo icon -->
+                         <!-- Logo text -->
+                        
+                        <!-- Logo icon -->
+                        <!-- <b class="logo-icon"> -->
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <!-- <img src="../assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
+                            
+                        <!-- </b> -->
+                        <!--End Logo icon -->
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Toggle which is visible on mobile only -->
+                    <!-- ============================================================== -->
+                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-left mr-auto">
+                        <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i id="showhide" class="mdi mdi-chevron-double-left font-24"></i></a></li>
+                        
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-right">
+                        
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar" data-sidebarbg="skin5">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav" class="p-t-30">
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Getting Started</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="collaterals.html" aria-expanded="false"><i class="mdi mdi-matrix"></i><span class="hide-menu">Integration Collaterals</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="sso.html" aria-expanded="false"><i class="mdi mdi-lock-outline"></i><span class="hide-menu">SSO Integration</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="lrs.html" aria-expanded="false"><i class="mdi mdi-read"></i><span class="hide-menu">LRS with xAPI</span></a></li>
+                        <li class="sidebar-item">
+						<a class="sidebar-link has-arrow waves-effect waves-dark" href="enalyticsea.html" aria-expanded="false"> <i class="mdi mdi-chart-line"></i>
+							<span class="hide-menu">Analytics Events API</span>
+						</a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+								<li class="sidebar-item">
+									<a href="enalyticsea.html" class="sidebar-link">
+										<i class="mdi mdi-arrow-right"></i>
+										<span class="hide-menu"> Overview </span>
+									</a>
+								</li>
+                                <li class="sidebar-item">
+									<a href="aeue.html" class="sidebar-link">
+										<i class="mdi mdi-access-point"></i>
+										<span class="hide-menu"> Using The Endpoint </span>
+									</a>
+								</li>
+                                <li class="sidebar-item">
+									<a href="aecf.html" class="sidebar-link" target="" >
+										<i class="mdi mdi-arrow-right" ></i>
+										<span class="hide-menu"> Common fields </span>
+									</a>
+								</li>
+								<li class="sidebar-item">
+									<a href="aeus.html" target=""  class="sidebar-link">
+										<i class="mdi mdi-arrow-right"></i>
+										<span class="hide-menu"> User scores </span>
+									</a>
+								</li>
+								<li class="sidebar-item">
+									<a href="aec.html" target=""  class="sidebar-link">
+										<i class="mdi mdi-arrow-right"></i>
+										<span class="hide-menu"> Cards </span>
+									</a>
+								</li>
+								<li class="sidebar-item"><a href="aech.html" target=""  class="sidebar-link"><i class="mdi mdi-arrow-right"></i><span class="hide-menu"> Channels </span></a></li>
+								<li class="sidebar-item"><a href="aeg.html" target=""  class="sidebar-link"><i class="mdi mdi-arrow-right"></i><span class="hide-menu"> Groups </span></a></li>
+								<li class="sidebar-item"><a href="aein.html" target=""  class="sidebar-link"><i class="mdi mdi-arrow-right"></i><span class="hide-menu"> Integrations </span></a></li>
+								<li class="sidebar-item"><a href="aeor.html" target=""  class="sidebar-link"><i class="mdi mdi-arrow-right"></i><span class="hide-menu"> Organizations </span></a></li>
+								<li class="sidebar-item"><a href="aese.html" target=""  class="sidebar-link"><i class="mdi mdi-arrow-right"></i><span class="hide-menu"> Searches </span></a></li>
+								<li class="sidebar-item"><a href="aeusers.html" target=""  class="sidebar-link"><i class="mdi mdi-account"></i><span class="hide-menu"> Users </span></a></li>
+								<li class="sidebar-item"><a href="aexapi.html" target=""  class="sidebar-link"><i class="mdi mdi-arrow-right"></i><span class="hide-menu"> Xapi Credentials </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Developer API (v5)</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="dauthentication.html" class="sidebar-link"><i class="mdi mdi-file-lock"></i><span class="hide-menu"> Authentication </span></a></li>
+                                <li class="sidebar-item"><a href="https://documenter.getpostman.com/view/1465156/RW8FERBE?version=latest#c7de3a2b-dfc5-4e55-9e00-b68d8d692ac8" class="sidebar-link" target="blank" ><i class="mdi mdi-account" ></i><span class="hide-menu"> Users </span></a></li>
+								<li class="sidebar-item"><a href="https://documenter.getpostman.com/view/1465156/RW8FERBE?version=latest#d8c63198-0191-4710-b5d2-0faeafc27394" target="blank"  class="sidebar-link"><i class="mdi mdi-file-document"></i><span class="hide-menu"> Content </span></a></li>
+								<li class="sidebar-item"><a href="https://www.getpostman.com/collections/1465156-321516de-a893-4740-b8d6-6f2307d85e00-RW8FERBEl" class="sidebar-link"><i class="mdi mdi-download"></i><span class="hide-menu"> Download Developer<br>API Postman Collection </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-code-braces"></i><span class="hide-menu">ECL Developer API </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="eauthentication.html" class="sidebar-link"><i class="mdi mdi-file-lock"></i><span class="hide-menu"> Authentication </span></a></li>
+                                <li class="sidebar-item"><a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-file-lock"></i><span class="hide-menu"> Collector </span></a>
+									 <ul aria-expanded="false" class="collapse  first-level p50">
+										<li class="sidebar-item"><a href="cshow.html" class="sidebar-link"><span class="hide-menu"> Show </span></a></li>
+										<li class="sidebar-item"><a href="csearch.html" class="sidebar-link"><span class="hide-menu"> Search </span></a></li>
+										<li class="sidebar-item"><a href="ctrigger.html" class="sidebar-link"><span class="hide-menu"> Trigger Collector </span></a></li>
+									</ul>	
+								</li>
+								<li class="sidebar-item"><a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-inbox"></i><span class="hide-menu"> Integration </span></a>
+									 <ul aria-expanded="false" class="collapse  first-level p50">
+										<li class="sidebar-item"><a href="ifind.html" class="sidebar-link"><span class="hide-menu"> Find by Name or ID </span></a></li>
+										<li class="sidebar-item"><a href="icreate.html" class="sidebar-link"><span class="hide-menu"> Create </span></a></li>
+										<li class="sidebar-item"><a href="ishow.html" class="sidebar-link"><span class="hide-menu"> Show </span></a></li>
+										<li class="sidebar-item"><a href="iupdate.html" class="sidebar-link"><span class="hide-menu"> Update </span></a></li>
+										<li class="sidebar-item"><a href="itrigger.html" class="sidebar-link"><span class="hide-menu"> Trigger Collector </span></a></li>
+									</ul>	
+								</li>
+								<li class="sidebar-item"><a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-file-document"></i><span class="hide-menu"> Content Item </span></a>
+									 <ul aria-expanded="false" class="collapse  first-level p50">
+										<li class="sidebar-item"><a href="cisearch.html" class="sidebar-link"><span class="hide-menu"> Search </span></a></li>
+										<li class="sidebar-item"><a href="cishow.html" class="sidebar-link"><span class="hide-menu"> Show </span></a></li>
+										<li class="sidebar-item"><a href="cicreate.html" class="sidebar-link"><span class="hide-menu"> Create </span></a></li>
+									</ul>	
+								</li>
+								<li class="sidebar-item"><a href="https://www.getpostman.com/collections/83b590a94d154a5d04d2" class="sidebar-link"><i class="mdi mdi-download"></i><span class="hide-menu"> Download ECL Developer<br>API Postman Collection </span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+             <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+                        <h4 class="page-title">Get Started</h4>
+                        
+                    </div>
+                </div>
+            </div>
+			<!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Sales Cards  -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-md-12">
+                        <div class="widget-box">
+						  <div class="widget-title">
+							<h5>List of events - Organizations</h5>
+						  </div>
+						  <div class="widget-content nopadding">
+							<article class="markdown-body">
+
+<table class="table table-striped">
+<tbody><tr><th>event</th>
+<th>notes</th>
+</tr><tr><td>org_announcement_created</td><td></td></tr>
+<tr><td>org_announcement_deleted</td><td></td></tr>
+<tr><td>org_announcement_edited</td><td></td></tr>
+<tr><td>org_badging_created</td><td></td></tr>
+<tr><td>org_career_advisor_created</td><td></td></tr>
+<tr><td>org_career_advisor_edited</td><td></td></tr>
+<tr><td>org_clc_created</td><td></td></tr>
+<tr><td>org_clc_deleted</td><td></td></tr>
+<tr><td>org_config_created</td><td></td></tr>
+<tr><td>org_config_edited</td><td></td></tr>
+<tr><td>org_created</td><td></td></tr>
+<tr><td>org_custom_field_added</td><td></td></tr>
+<tr><td>org_custom_field_config_added</td><td></td></tr>
+<tr><td>org_custom_field_config_edited</td><td></td></tr>
+<tr><td>org_custom_field_edited</td><td></td></tr>
+<tr><td>org_custom_field_removed</td><td></td></tr>
+<tr><td>org_developer_api_credentials_created</td><td></td></tr>
+<tr><td>org_developer_api_credentials_deleted</td><td></td></tr>
+<tr><td>org_ecl_setting_edited</td><td></td></tr>
+<tr><td>org_edited</td><td></td></tr>
+<tr><td>org_email_sender_created</td><td></td></tr>
+<tr><td>org_email_sender_deleted</td><td></td></tr>
+<tr><td>org_email_sender_edited</td><td></td></tr>
+<tr><td>org_email_template_created</td><td></td></tr>
+<tr><td>org_email_template_deleted</td><td></td></tr>
+<tr><td>org_email_template_edited</td><td></td></tr>
+<tr><td>org_embargo_added</td><td></td></tr>
+<tr><td>org_embargo_edited</td><td></td></tr>
+<tr><td>org_embargo_removed</td><td></td></tr>
+<tr><td>org_notification_settings_edited</td><td></td></tr>
+<tr><td>org_partner_center_created</td><td></td></tr>
+<tr><td>org_partner_center_deleted</td><td></td></tr>
+<tr><td>org_partner_center_edited</td><td></td></tr>
+<tr><td>org_report_downloaded</td><td></td></tr>
+<tr><td>org_role_created</td><td></td></tr>
+<tr><td>org_role_deleted</td><td></td></tr>
+<tr><td>org_role_permission_disabled</td><td></td></tr>
+<tr><td>org_role_permission_enabled</td><td></td></tr>
+<tr><td>org_sources_credential_created</td><td></td></tr>
+<tr><td>org_sources_credential_deleted</td><td></td></tr>
+<tr><td>org_sources_credential_edited</td><td></td></tr>
+<tr><td>org_sso_added</td><td></td></tr>
+<tr><td>org_sso_edited</td><td></td></tr>
+<tr><td>org_taxonomy_approved</td><td></td></tr>
+<tr><td>org_taxonomy_created</td><td></td></tr>
+<tr><td>org_taxonomy_published</td><td></td></tr>
+<tr><td>org_taxonomy_rejected</td><td></td></tr>
+<tr><td>org_workflow_created</td><td></td></tr>
+<tr><td>org_workflow_deleted</td><td></td></tr>
+<tr><td>org_workflow_edited</td><td></td></tr>
+</tbody></table>
+<br>
+<h3 id="standard-fields"><a class="header-link" href="#standard-fields"></a>Standard Fields</h3>
+<p>These fields are included with all organization events:</p>
+
+<table  class="table table-striped">
+<tbody><tr><th>field</th>
+<th>notes</th>
+</tr><tr><td>org_host_name</td><td></td></tr>
+<tr><td>org_name</td><td></td></tr>
+<tr><td>org_slug</td><td></td></tr>
+<tr><td>org_custom_domain</td><td></td></tr>
+<tr><td>org_client_id</td><td></td></tr>
+<tr><td>org_is_open</td><td></td></tr>
+<tr><td>org_is_registrable</td><td></td></tr>
+<tr><td>org_status</td><td></td></tr>
+<tr><td>org_send_weekly_activity</td><td></td></tr>
+<tr><td>org_show_sub_brand_on_login</td><td></td></tr>
+<tr><td>org_savannah_app_id</td><td></td></tr>
+<tr><td>org_redirect_uri</td><td></td></tr>
+<tr><td>org_social_enabled</td><td></td></tr>
+<tr><td>org_xapi_enabled</td><td></td></tr>
+<tr><td>org_show_onboarding</td><td></td></tr>
+<tr><td>org_enable_role_based_authorization</td><td></td></tr>
+</tbody></table>
+<br>
+<h3 id="edited-events"><a class="header-link" href="#edited-events"></a>Edited events</h3>
+<p>We record events for changes on the following attributes. Note, we
+split these up among org_edited and org_config_edited events, depending on
+how it is internally stored.</p>
+<p>name, description, host_name, is_open, status, send_weekly_activity, xapi_enabled, enable_role_based_authorization, custom_domain, value, image_file_name, mobile_image_file_name, co_branding_logo_file_name, favicon_file_name, label, start_date, end_date, is_active, state, requestor_id, approver_id, publisher_id, source_id, shared_secret, auth_api_info, source_name</p>
+<br>
+<h3 id="event-specific-fields"><a class="header-link" href="#event-specific-fields"></a>Event specific fields</h3>
+<p>Certain events have special fields included:</p>
+
+<table class="table table-striped">
+<tbody><tr><th>category</th>
+<th>events</th>
+<th>fields</th>
+</tr><tr>
+<td>Configs</td>
+<td>org_config_created, org_config_edited, org_config_deleted</td>
+<td>config_id, config_name</td>
+</tr>
+<tr>
+<td>Announcements</td>
+<td>org_announcement_created, org_announcement_deleted</td>
+<td>announcement_name, announcement_start_date, announcement_end_date, announcement_id</td>
+</tr>
+<tr>
+<td>Notifications</td>
+<td>org_custom_notification_sent</td>
+<td>notification_json_payload, notification_message</td>
+</tr>
+<tr>
+<td>Taxonomies</td>
+<td>org_taxonomy_created, org_taxonomy_deleted</td>
+<td>taxonomy_id, taxonomy_label, taxonomy_requestor_id, taxonomy_approver_id, taxonomy_publisher_id, taxonomy_state</td>
+</tr>
+<tr>
+<td>Embargos</td>
+<td>org_embargo_added, org_embargo_removed</td>
+<td>embargo_id, embargo_type, embargo_content</td>
+</tr>
+<tr>
+<td>Source Credentials</td>
+<td>org_sources_credential_created, org_sources_credential_deleted</td>
+<td>source_credential_id, source_credential_source_id, source_credential_shared_secret, source_credential_auth_api_info, source_credential_source_name</td>
+</tr>
+<tr>
+<td>Partner Centers</td>
+<td>org_partner_center_created, org_partner_center_deleted, org_partner_center_edited</td>
+<td>partner_center_id, partner_center_enabled, partner_center_description, partner_center_embed_link, partner_center_integration</td>
+</tr>
+<tr>
+<td>Email Templates</td>
+<td>org_email_template_created, org_email_template_deleted, org_email_template_edited</td>
+<td>email_template_content, email_template_creator_id, email_template_state, email_template_language, email_template_title, email_template_is_active, email_template_default_id, email_template_design, email_template_id</td>
+</tr>
+<tr>
+<td>Mailer Configs</td>
+<td>org_email_sender_created, org_email_sender_deleted, org_email_sender_edited</td>
+<td>email_sender_from_address, email_sender_from_name, is_sender_verified, mailer_config_id, is_current_sender</td>
+</tr>
+<tr>
+<td>Developer API Credentials</td>
+<td>org_developer_api_credentials_created, org_developer_api_credentials_deleted</td>
+<td>developer_api_key</td>
+</tr>
+<tr>
+<td>Org SSO</td>
+<td>org_sso_added, org_sso_removed, org_sso_edited</td>
+<td>org_sso_name</td>
+</tr>
+<tr>
+<td>Roles</td>
+<td>org_role_permission_enabled, org_role_permission_disabled, org_role_created, org_role_deleted</td>
+<td>role_id, role_name, role_permission</td>
+</tr>
+<tr>
+<td>Custom fields</td>
+<td>org_custom_field_added, org_custom_field_removed, org_custom_field_edited, org_custom_field_config_added, org_custom_field_config_removed, org_custom_field_config_edited</td>
+<td>custom_field_display_name, custom_field_id, config_id, config_name</td>
+</tr>
+<tr>
+<td>Career Advisor</td>
+<td>org_career_advisor_created, org_career_advisor_deleted, org_career_advisor_edited</td>
+<td>career_advisor_id, career_advisor_skill, career_advisor_links</td>
+</tr>
+<tr>
+<td>Workflows</td>
+<td>org_workflow_created, org_workflow_deleted, org_workflow_edited</td>
+<td>workflow_id, workflow_name, workflow_status, workflow_is_enabled, workflow_attributes</td>
+</tr>
+<tr>
+<td>Badges</td>
+<td>org_badging_created, org_badging_deleted, org_badging_edited</td>
+<td>badging_id, badging_title, badging_badge_id, badging_badgeable_id, badging_type, badging_target_steps, badging_all_quizzes_answered</td>
+</tr>
+<tr>
+<td>CLC Badges</td>
+<td>org_clc_created, org_clc_deleted, org_clc_edited</td>
+<td>clc_id, clc_entity_id, clc_entity_type, clc_from_date, clc_to_date, clc_target_score, clc_target_steps, clc_name</td>
+</tr>
+<tr>
+<td><b>Other</b></td>
+<td>org_report_downloaded, org_ecl_setting_edited</td>
+<td><b>These events only have org_id and 'attributes' which is a JSON serialized dictionary</b></td>
+</tr>
+</tbody></table>
+    </article>
+						  </div>
+						</div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+			<footer class="footer">
+				<div class="row">
+					<div class="col-sm-6">
+						 <div>© 2019 EdCast Inc.</div>
+					</div>
+					<div class="col-sm-6">
+						<div align="right">
+							<a href="https://www.facebook.com/EdCast"><img class="fimg" src="../assets/images/fb.png"></a>
+							<a href="https://twitter.com/edcast"><img class="fimg" src="../assets/images/tw.png"></a>	
+							<a href="https://www.linkedin.com/company/edcast"><img class="fimg" src="../assets/images/ln.png"></a>		
+						</div>
+					</div>
+				</div>
+				</footer>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="../assets/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="../assets/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../assets/js/custom.min.js"></script>
+
+</body>
+
+</html>

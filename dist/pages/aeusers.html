@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <title>Edcast Integration</title>
+    <!-- Custom CSS -->
+    <link href="../assets/libs/flot/css/float-chart.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../assets/css/style.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin5">
+                    <!-- This is for the sidebar toggle which is visible on mobile only -->
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo icon -->
+                        <b class="logo-icon p-l-10">
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="../assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+                           
+                        </b>
+                        <!--End Logo icon -->
+                         <!-- Logo text -->
+                        
+                        <!-- Logo icon -->
+                        <!-- <b class="logo-icon"> -->
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <!-- <img src="../assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
+                            
+                        <!-- </b> -->
+                        <!--End Logo icon -->
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Toggle which is visible on mobile only -->
+                    <!-- ============================================================== -->
+                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-left mr-auto">
+                        <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i id="showhide" class="mdi mdi-chevron-double-left font-24"></i></a></li>
+                        
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-right">
+                        
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar" data-sidebarbg="skin5">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav" class="p-t-30">
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Getting Started</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="collaterals.html" aria-expanded="false"><i class="mdi mdi-matrix"></i><span class="hide-menu">Integration Collaterals</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="sso.html" aria-expanded="false"><i class="mdi mdi-lock-outline"></i><span class="hide-menu">SSO Integration</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="lrs.html" aria-expanded="false"><i class="mdi mdi-read"></i><span class="hide-menu">LRS with xAPI</span></a></li>
+                        <li class="sidebar-item">
+						<a class="sidebar-link has-arrow waves-effect waves-dark" href="enalyticsea.html" aria-expanded="false"> <i class="mdi mdi-chart-line"></i>
+							<span class="hide-menu">Analytics Events API</span>
+						</a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+								<li class="sidebar-item">
+									<a href="enalyticsea.html" class="sidebar-link">
+										<i class="mdi mdi-arrow-right"></i>
+										<span class="hide-menu"> Overview </span>
+									</a>
+								</li>
+                                <li class="sidebar-item">
+									<a href="aeue.html" class="sidebar-link">
+										<i class="mdi mdi-access-point"></i>
+										<span class="hide-menu"> Using The Endpoint </span>
+									</a>
+								</li>
+                                <li class="sidebar-item">
+									<a href="aecf.html" class="sidebar-link" target="" >
+										<i class="mdi mdi-arrow-right" ></i>
+										<span class="hide-menu"> Common fields </span>
+									</a>
+								</li>
+								<li class="sidebar-item">
+									<a href="aeus.html" target=""  class="sidebar-link">
+										<i class="mdi mdi-arrow-right"></i>
+										<span class="hide-menu"> User scores </span>
+									</a>
+								</li>
+								<li class="sidebar-item">
+									<a href="aec.html" target=""  class="sidebar-link">
+										<i class="mdi mdi-arrow-right"></i>
+										<span class="hide-menu"> Cards </span>
+									</a>
+								</li>
+								<li class="sidebar-item"><a href="aech.html" target=""  class="sidebar-link"><i class="mdi mdi-arrow-right"></i><span class="hide-menu"> Channels </span></a></li>
+								<li class="sidebar-item"><a href="aeg.html" target=""  class="sidebar-link"><i class="mdi mdi-arrow-right"></i><span class="hide-menu"> Groups </span></a></li>
+								<li class="sidebar-item"><a href="aein.html" target=""  class="sidebar-link"><i class="mdi mdi-arrow-right"></i><span class="hide-menu"> Integrations </span></a></li>
+								<li class="sidebar-item"><a href="aeor.html" target=""  class="sidebar-link"><i class="mdi mdi-arrow-right"></i><span class="hide-menu"> Organizations </span></a></li>
+								<li class="sidebar-item"><a href="aese.html" target=""  class="sidebar-link"><i class="mdi mdi-arrow-right"></i><span class="hide-menu"> Searches </span></a></li>
+								<li class="sidebar-item"><a href="aeusers.html" target=""  class="sidebar-link"><i class="mdi mdi-account"></i><span class="hide-menu"> Users </span></a></li>
+								<li class="sidebar-item"><a href="aexapi.html" target=""  class="sidebar-link"><i class="mdi mdi-arrow-right"></i><span class="hide-menu"> Xapi Credentials </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Developer API (v5)</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="dauthentication.html" class="sidebar-link"><i class="mdi mdi-file-lock"></i><span class="hide-menu"> Authentication </span></a></li>
+                                <li class="sidebar-item"><a href="https://documenter.getpostman.com/view/1465156/RW8FERBE?version=latest#c7de3a2b-dfc5-4e55-9e00-b68d8d692ac8" class="sidebar-link" target="blank" ><i class="mdi mdi-account" ></i><span class="hide-menu"> Users </span></a></li>
+								<li class="sidebar-item"><a href="https://documenter.getpostman.com/view/1465156/RW8FERBE?version=latest#d8c63198-0191-4710-b5d2-0faeafc27394" target="blank"  class="sidebar-link"><i class="mdi mdi-file-document"></i><span class="hide-menu"> Content </span></a></li>
+								<li class="sidebar-item"><a href="https://www.getpostman.com/collections/1465156-321516de-a893-4740-b8d6-6f2307d85e00-RW8FERBEl" class="sidebar-link"><i class="mdi mdi-download"></i><span class="hide-menu"> Download Developer<br>API Postman Collection </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-code-braces"></i><span class="hide-menu">ECL Developer API </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="eauthentication.html" class="sidebar-link"><i class="mdi mdi-file-lock"></i><span class="hide-menu"> Authentication </span></a></li>
+                                <li class="sidebar-item"><a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-file-lock"></i><span class="hide-menu"> Collector </span></a>
+									 <ul aria-expanded="false" class="collapse  first-level p50">
+										<li class="sidebar-item"><a href="cshow.html" class="sidebar-link"><span class="hide-menu"> Show </span></a></li>
+										<li class="sidebar-item"><a href="csearch.html" class="sidebar-link"><span class="hide-menu"> Search </span></a></li>
+										<li class="sidebar-item"><a href="ctrigger.html" class="sidebar-link"><span class="hide-menu"> Trigger Collector </span></a></li>
+									</ul>	
+								</li>
+								<li class="sidebar-item"><a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-inbox"></i><span class="hide-menu"> Integration </span></a>
+									 <ul aria-expanded="false" class="collapse  first-level p50">
+										<li class="sidebar-item"><a href="ifind.html" class="sidebar-link"><span class="hide-menu"> Find by Name or ID </span></a></li>
+										<li class="sidebar-item"><a href="icreate.html" class="sidebar-link"><span class="hide-menu"> Create </span></a></li>
+										<li class="sidebar-item"><a href="ishow.html" class="sidebar-link"><span class="hide-menu"> Show </span></a></li>
+										<li class="sidebar-item"><a href="iupdate.html" class="sidebar-link"><span class="hide-menu"> Update </span></a></li>
+										<li class="sidebar-item"><a href="itrigger.html" class="sidebar-link"><span class="hide-menu"> Trigger Collector </span></a></li>
+									</ul>	
+								</li>
+								<li class="sidebar-item"><a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-file-document"></i><span class="hide-menu"> Content Item </span></a>
+									 <ul aria-expanded="false" class="collapse  first-level p50">
+										<li class="sidebar-item"><a href="cisearch.html" class="sidebar-link"><span class="hide-menu"> Search </span></a></li>
+										<li class="sidebar-item"><a href="cishow.html" class="sidebar-link"><span class="hide-menu"> Show </span></a></li>
+										<li class="sidebar-item"><a href="cicreate.html" class="sidebar-link"><span class="hide-menu"> Create </span></a></li>
+									</ul>	
+								</li>
+								<li class="sidebar-item"><a href="https://www.getpostman.com/collections/83b590a94d154a5d04d2" class="sidebar-link"><i class="mdi mdi-download"></i><span class="hide-menu"> Download ECL Developer<br>API Postman Collection </span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+             <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+                        <h4 class="page-title">Get Started</h4>
+                        
+                    </div>
+                </div>
+            </div>
+			<!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Sales Cards  -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-md-12">
+                        <div class="widget-box">
+						  <div class="widget-title">
+							<h5>List of events - Users</h5>
+						  </div>
+						  <div class="widget-content nopadding">
+							<article class="markdown-body">
+
+<table class="table table-striped">
+<tbody><tr><th>event</th>
+<th>notes</th>
+</tr><tr><td>user_badge_completed</td><td>A user achieves a badge</td></tr>
+<tr><td>user_created</td><td>A user registers or gets registered by an admin</td></tr>
+<tr><td>user_custom_field_added</td><td>The user-specific value for a custom field is set for the first time</td></tr>
+<tr><td>user_custom_field_edited</td><td>The user-specific value for a custom field is changed</td></tr>
+<tr><td>user_custom_field_removed</td><td>The user-specific value for a custom field is removed</td></tr>
+<tr><td>user_edited</td><td>Some attribute of a user is changed</td></tr>
+<tr><td>user_expertise_topic_added</td><td>A user adds an entry to their "expertise skills" list</td></tr>
+<tr><td>user_expertise_topic_removed</td><td>A user removes an entry from their "expertise skills" list</td></tr>
+<tr><td>user_followed</td><td></td></tr>
+<tr><td>user_interest_topic_added</td><td></td></tr>
+<tr><td>user_interest_topic_removed</td><td></td></tr>
+<tr><td>user_logged_in</td><td></td></tr>
+<tr><td>user_onboarding_completed</td><td></td></tr>
+<tr><td>user_onboarding_created</td><td></td></tr>
+<tr><td>user_onboarding_deleted</td><td></td></tr>
+<tr><td>user_onboarding_started</td><td></td></tr>
+<tr><td>user_profile_visited</td><td></td></tr>
+<tr><td>user_role_added</td><td></td></tr>
+<tr><td>user_role_removed</td><td></td></tr>
+<tr><td>user_skill_created</td><td></td></tr>
+<tr><td>user_skill_deleted</td><td></td></tr>
+<tr><td>user_skill_edited</td><td></td></tr>
+<tr><td>user_suspended</td><td></td></tr>
+<tr><td>user_unfollowed</td><td></td></tr>
+<tr><td>user_unsuspended</td><td></td></tr>
+</tbody></table>
+
+<br>
+<h3 id="standard-fields"><a class="header-link" href="#standard-fields"></a>Standard Fields</h3>
+
+<table class="table table-striped">
+<tbody><tr><th>field</th>
+<th>notes</th>
+</tr><tr><td>sign_in_ip</td><td></td></tr>
+<tr><td>sign_in_at</td><td></td></tr>
+<tr><td>user_id</td><td></td></tr>
+<tr><td>user_role</td><td></td></tr>
+<tr><td>user_org_uid</td><td></td></tr>
+<tr><td>org_hostname</td><td></td></tr>
+<tr><td>onboarding_status</td><td></td></tr>
+<tr><td>full_name</td><td></td></tr>
+<tr><td>user_handle</td><td></td></tr>
+
+</tbody></table>
+<br>
+<h3 id="edited-events"><a class="header-link" href="#edited-events"></a>Edited events</h3>
+<p>We track changes to the following attributes:</p>
+<p>email, first_name, last_name, handle, bio, is_complete, organization_role, parent_user_id, locked_at, is_active, hide_from_leaderboard, exclude_from_leaderboard, default_team_id</p>
+<p>The following attributes on user profiles are also tracked through the user_edited event:</p>
+<p>hr_job_role_id, hr_organization_id, hr_location_id, hr_competency_id, hr_domain_id, time_zone, tac_accepted, language, dob, tac_accepted_at, job_title</p>
+<p>On user custom fields we only track edited events for the field 'value'.</p>
+<br>
+<h3 id="event-specific-fields"><a class="header-link" href="#event-specific-fields"></a>Event-specific fields</h3>
+<table class="table table-striped">
+<tbody><tr><th>category</th>
+<th>events</th>
+<th>fields</th>
+</tr><tr><td>Edits</td><td>user_edited</td><td>edited_user_id</td></tr>
+<tr><td>Creation</td><td>user_created</td><td>created_user_id, upload_mode</td></tr>
+<tr><td>Deletion</td><td>user_deleted</td><td>deleted_user_id</td></tr>
+<tr><td>Role Changes</td><td>user_role_added, user_role_removed</td><td>member_user_id</td></tr>
+<tr><td>Suspension</td><td>user_suspended, user_unsuspended</td><td>suspended_user_id</td></tr>
+<tr><td>Profile Visits</td><td>user_profile_visited</td><td>visited_profile_user_id</td></tr>
+<tr><td>Skills</td><td>user_skill_created, user_skill_edited, user_skill_deleted</td><td>skill_name, skill_id, skill_description, skill_experience, skill_level, skill_credential_name, skill_credential_url, skill_credential</td></tr>
+<tr><td>Onboarding</td><td>user_onboarding_created, user_onboarding_started, user_onboarding_completed, user_onboarding_deleted</td><td>user_onboarding_id, user_onboarding_current_step, user_onboarding_status</td></tr>
+<tr><td>Follows</td><td>user_followed, user_unfollowed</td><td>followed_user_id, follower_id, followed_user_full_name, followed_user_handle</td></tr>
+<tr><td>Logins</td><td>user_logged_in</td><td>controller_action</td></tr>
+<tr><td>Expertise and Interest</td><td>user_expertise_topic_added, user_expertise_topic_removed, user_interest_topic_added, user_interest_topic_temoved</td><td>topic_id, topic_name, topic_label, domain_id, domain_name, domain_label, member_user_id</td></tr>
+<tr><td>Custom Fields</td><td>user_custom_field_added, user_custom_field_removed, user_custom_field_edited</td><td>custom_field_display_name, custom_field_id, member_user_id, value</td></tr>
+<tr><td>badges</td><td>user_badge_completed</td><td>badge_id, badge_title, badge_type</td></tr>
+</tbody></table>
+    </article>
+						  </div>
+						</div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+			<footer class="footer">
+				<div class="row">
+					<div class="col-sm-6">
+						 <div>© 2019 EdCast Inc.</div>
+					</div>
+					<div class="col-sm-6">
+						<div align="right">
+							<a href="https://www.facebook.com/EdCast"><img class="fimg" src="../assets/images/fb.png"></a>
+							<a href="https://twitter.com/edcast"><img class="fimg" src="../assets/images/tw.png"></a>	
+							<a href="https://www.linkedin.com/company/edcast"><img class="fimg" src="../assets/images/ln.png"></a>		
+						</div>
+					</div>
+				</div>
+				</footer>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="../assets/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="../assets/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../assets/js/custom.min.js"></script>
+
+</body>
+
+</html>

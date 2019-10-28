@@ -84,7 +84,7 @@
                     <!-- toggle and nav items -->
                     <!-- ============================================================== -->
                     <ul class="navbar-nav float-left mr-auto">
-                        <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
+                        <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i id="showhide" class="mdi mdi-chevron-double-left font-24"></i></a></li>
                         
                     </ul>
                     <!-- ============================================================== -->
@@ -119,7 +119,50 @@
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages/collaterals.html" aria-expanded="false"><i class="mdi mdi-matrix"></i><span class="hide-menu">Integration Collaterals</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages/sso.html5shiv" aria-expanded="false"><i class="mdi mdi-lock-outline"></i><span class="hide-menu">SSO Integration</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages/lrs.html" aria-expanded="false"><i class="mdi mdi-read"></i><span class="hide-menu">LRS with xAPI</span></a></li>
-                        
+                        <li class="sidebar-item">
+						<a class="sidebar-link has-arrow waves-effect waves-dark" href="pages/enalyticsea.html" aria-expanded="false"> <i class="mdi mdi-chart-line"></i>
+							<span class="hide-menu">Analytics Events API</span>
+						</a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item">
+									<a href="pages/enalyticsea.html" class="sidebar-link">
+										<i class="mdi mdi-arrow-right"></i>
+										<span class="hide-menu"> Overview </span>
+									</a>
+								</li>
+								<li class="sidebar-item">
+									<a href="pages/aeue.html" class="sidebar-link">
+										<i class="mdi mdi-access-point"></i>
+										<span class="hide-menu"> Using The Endpoint </span>
+									</a>
+								</li>
+                                <li class="sidebar-item">
+									<a href="pages/aecf.html" class="sidebar-link" target="" >
+										<i class="mdi mdi-arrow-right" ></i>
+										<span class="hide-menu"> Common fields </span>
+									</a>
+								</li>
+								<li class="sidebar-item">
+									<a href="pages/aeus.html" target=""  class="sidebar-link">
+										<i class="mdi mdi-arrow-right"></i>
+										<span class="hide-menu"> User scores </span>
+									</a>
+								</li>
+								<li class="sidebar-item">
+									<a href="pages/aec.html" target=""  class="sidebar-link">
+										<i class="mdi mdi-arrow-right"></i>
+										<span class="hide-menu"> Cards </span>
+									</a>
+								</li>
+								<li class="sidebar-item"><a href="pages/aech.html" target=""  class="sidebar-link"><i class="mdi mdi-arrow-right"></i><span class="hide-menu"> Channels </span></a></li>
+								<li class="sidebar-item"><a href="pages/aeg.html" target=""  class="sidebar-link"><i class="mdi mdi-arrow-right"></i><span class="hide-menu"> Groups </span></a></li>
+								<li class="sidebar-item"><a href="pages/aein.html" target=""  class="sidebar-link"><i class="mdi mdi-arrow-right"></i><span class="hide-menu"> Integrations </span></a></li>
+								<li class="sidebar-item"><a href="pages/aeor.html" target=""  class="sidebar-link"><i class="mdi mdi-arrow-right"></i><span class="hide-menu"> Organizations </span></a></li>
+								<li class="sidebar-item"><a href="pages/aese.html" target=""  class="sidebar-link"><i class="mdi mdi-arrow-right"></i><span class="hide-menu"> Searches </span></a></li>
+								<li class="sidebar-item"><a href="pages/aeusers.html" target=""  class="sidebar-link"><i class="mdi mdi-account"></i><span class="hide-menu"> Users </span></a></li>
+								<li class="sidebar-item"><a href="pages/aexapi.html" target=""  class="sidebar-link"><i class="mdi mdi-arrow-right"></i><span class="hide-menu"> Xapi Credentials </span></a></li>
+                            </ul>
+                        </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Developer API (v5)</span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item"><a href="pages/dauthentication.html" class="sidebar-link"><i class="mdi mdi-file-lock"></i><span class="hide-menu"> Authentication </span></a></li>
