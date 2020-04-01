@@ -258,14 +258,14 @@
 <tr><td>card_comment_trashed</td><td>When a card comment is trashed</td></tr>
 <tr><td>card_comment_unreported</td><td>When a card comment is unreported</td></tr>
 <tr><td>card_created</td><td>When a card is created on the platform</td></tr>
-<tr><td>card_created_virtual</td>When a card is automatically created<td></td></tr>
-<tr><td>card_created_with_project</td>When a project card is created<td></td></tr>
-<tr><td>card_created_with_training</td>When a VILT card is created<td></td></tr>
+<tr><td>card_created_virtual</td><td>When a card is automatically created<td></td></tr>
+<tr><td>card_created_with_project</td><td>When a project card is created<td></td></tr>
+<tr><td>card_created_with_training</td><td>When a VILT card is created<td></td></tr>
 <tr><td>card_deleted</td><td>When a card is deleted/removed from the platform</td></tr>
 <tr><td>card_dismissed</td><td>When a card is dismissed so that it won't be visible</td></tr>
 <tr><td>card_edited</td><td>When a card is edited by user</td></tr>
 <tr><td>card_edited_from_career_advisor</td><td>When card is edited from career advisor</td></tr>
-<tr><td>card_edited_with_training</td>When a VILT card is edited<td></td></tr>
+<tr><td>card_edited_with_training</td><td>When a VILT card is edited<td></td></tr>
 <tr><td>card_liked</td><td>When user likes a card</td></tr>
 <tr><td>card_marked_as_complete</td><td>When user "mark as complete" a card </td></tr>
 <tr><td>card_marked_as_uncomplete</td><td>When user "mark as uncomplete" a card </td></tr>
@@ -280,7 +280,7 @@
 <tr><td>card_removed_from_channel</td><td>When user removes a card from a channel</td></tr>
 <tr><td>card_removed_from_journey</td><td>When user removes a card from a journey</td></tr>
 <tr><td>card_removed_from_pathway</td><td>When user removes a card from a pathway</td></tr>
-<tr><td>card_reported</td>When a card is reported<td></td></tr>
+<tr><td>card_reported</td><td>When a card is reported<td></td></tr>
 <tr><td>card_shared</td><td>When a user shares a card with others</td></tr>
 <tr><td>card_source_visited</td><td>When user views the link on the card</td></tr>
 <tr><td>card_submission_created</td><td> When a VILT submission is created</td></tr>
@@ -347,7 +347,7 @@
 <tbody><tr><th>category</th>
 <th>events</th>
 <th>fields</th>
-</tr><tr><td>Assignment</td><td>card_assigned, card_assignment_dismissed</td><td>assigned_to_user_id</td></tr>
+</tr><tr><td>Assignment</td><td>card_assigned, card_assignment_dismissed,card_assignment_deleted</td><td>assigned_to_user_id</td></tr>
 <tr><td>Poll responses</td><td>card_poll_response_created</td><td>poll_option_label, poll_option_id</td></tr>
 <tr><td>Quiz responses</td><td>card_quiz_response_created</td><td>quiz_option_label, quiz_option_id, is_correct</td></tr>
 <tr><td>Pinning to channel</td><td>card_pinned, card_unpinned</td><td>pin_id, channel_id, 
@@ -356,10 +356,10 @@ is_channel_featured, is_channel_curated, is_channel_public, channel_name</td></t
 <tr><td>Ratings</td><td>card_relevance_rated</td><td>card_rating, card_level</td></tr>
 <tr><td>Comments</td><td>card_comment_created, card_comment_deleted</td><td>comment_type, comment_message, comment_id</td></tr>
 <tr><td>Moderation</td><td>card_approved_for_channel, card_rejected_for_channel</td><td>channel_id</td></tr>
-<tr><td>Sharing</td><td>card_shared</td><td>shared_to_user_id, team_id</td></tr>
+<tr><td>Sharing</td><td>card_shared, card_unshared</td><td>shared_to_user_id, team_id</td></tr>
 <tr><td>Channel membership</td><td>card_added_to_channel, card_removed_from_channel</td><td>channel_id, 
 is_channel_featured, is_channel_curated, is_channel_public, channel_name</td></tr>
-<tr><td>Other</td><td>card_unreported, card_untrashed, card_trashed, card_comment_unreported, card_comment_trashed</td><td>These events only have card_id and 'attributes' which is a JSON serialized dictionary</td></tr>
+<tr><td>Other</td><td>card_unreported, card_untrashed, card_trashed, card_comment_unreported, card_comment_trashed, card_comment_unreported, </td><td>These events only have card_id and 'attributes' which is a JSON serialized dictionary</td></tr>
 </tbody></table>
     </article>
 						  </div>
