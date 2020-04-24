@@ -283,8 +283,8 @@
 <tr><td>card_reported</td><td>When a card is reported<td></td></tr>
 <tr><td>card_shared</td><td>When a user shares a card with others</td></tr>
 <tr><td>card_source_visited</td><td>When user views the link on the card</td></tr>
-<tr><td>card_submission_created</td><td> When a VILT submission is created</td></tr>
-<tr><td>card_submission_deleted</td><td> When a VILT submission is deleted</td></tr>
+<tr><td>card_submission_created</td><td> When a project submission is created</td></tr>
+<tr><td>card_submission_deleted</td><td> When a project submission is deleted</td></tr>
 <tr><td>card_submission_grade_edited</td><td> When submission grade is edited</td></tr>
 <tr><td>card_submission_graded</td><td> When the author grades the submission</td></tr>
 <tr><td>card_training_registered</td><td> When the user registers for the training</td></tr>
@@ -350,11 +350,16 @@
 </tr><tr><td>Assignment</td><td>card_assigned, card_assignment_dismissed,card_assignment_deleted</td><td>assigned_to_user_id</td></tr>
 <tr><td>Poll responses</td><td>card_poll_response_created</td><td>poll_option_label, poll_option_id</td></tr>
 <tr><td>Quiz responses</td><td>card_quiz_response_created</td><td>quiz_option_label, quiz_option_id, is_correct</td></tr>
+<tr><td>VILT responses</td><td>card_created_with_training, card_edited_with_training, card_training_registered, card_training_registration_approved, card_training_registration_denied, card_training_unregistered</td><td>training_registration_id, training_registration_state, conferencing_tool, start_date, end_date, time_zone, registration_type, registration_limit, last_registration_date</td></tr>
+<tr><td>Project responses</td><td>card_created_with_project, card_submission_created, card_submission_deleted, card_submission_grade_edited, card_submission_graded</td><td>grade_range, grader_type, grading_system, project_card_submission, project_card_submission_id, submitter_type</td></tr>
+<tr><td>Pathways</td><td>card_added_to_pathway, card_removed_from_pathway</td><td>pathway_id, pathway_name</td></tr>
+<tr><td>Journeys</td><td>card_added_to_journey, card_removed_from_journey</td><td>journey_id, journey_name</td></tr>
 <tr><td>Pinning to channel</td><td>card_pinned, card_unpinned</td><td>pin_id, channel_id, 
 is_channel_featured, is_channel_curated, is_channel_public, channel_name</td></tr>
 <tr><td>Bookmarks</td><td>card_bookmarked, card_unbookmarked</td><td>card_bookmark_id</td></tr>
 <tr><td>Ratings</td><td>card_relevance_rated</td><td>card_rating, card_level</td></tr>
 <tr><td>Comments</td><td>card_comment_created, card_comment_deleted</td><td>comment_type, comment_message, comment_id</td></tr>
+<tr><td>Career advisor</td><td>card_added_to_career_advisor, card_edited_from_career_advisor, card_removed_from_career_advisor</td><td>career_advisor_card_id, career_advisor_card_level, career_advisor_id</td></tr>
 <tr><td>Moderation</td><td>card_approved_for_channel, card_rejected_for_channel</td><td>channel_id</td></tr>
 <tr><td>Sharing</td><td>card_shared, card_unshared</td><td>shared_to_user_id, team_id</td></tr>
 <tr><td>Channel membership</td><td>card_added_to_channel, card_removed_from_channel</td><td>channel_id, 
